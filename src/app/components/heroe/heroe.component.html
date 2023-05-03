@@ -1,0 +1,34 @@
+<h1 class="animated fadeIn">{{futbolista.Nombre | uppercase}} <br><br> <small> Año de debut : {{futbolista.Debut | date:'y'}}</small> </h1>
+<hr>
+<div class="row animated fadeIn fast">
+
+    <div class="col-md-4">
+
+        <img [src]="futbolista.img" class="img-fluid" [alt]="futbolista.Nombre">
+        <br><br>
+
+        <a [routerLink]="['/heroes']" class="btn btn-outline-danger btn-block">Regresar</a>
+        <hr>
+
+    </div>
+
+    <div class="col-md-/">
+
+        <h3>
+            Biografía:
+        </h3>
+        <hr>
+        <p>
+            {{futbolista.Bio}}
+        </p>
+        <div>
+            <hr>
+            <b><p>País de oígen:</p></b>
+
+            <img *ngIf="futbolista.Nacionalidad=='Argentina'" class="img-logo" src="assets/img/argentina.jpg" alt="Argentina">
+            <img *ngIf="futbolista.Nacionalidad=='Brasil'" class="img-logo" src="assets/img/Brasil.jpg" alt="Brasil">
+
+
+        </div>
+
+    </div>

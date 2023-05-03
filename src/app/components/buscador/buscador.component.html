@@ -1,0 +1,29 @@
+<h1>Buscando a: {{termino}}</h1>
+<hr>
+
+<div class="row" animated fadeIn fast *ngIf="futbolistas.length==0">
+    <div class="col-md-12">
+        <div class="alert alert-info" role="alert">
+            No se encontraron resultados en la búsqueda con el termino: "{{termino}}"
+        </div>
+    </div>
+</div>
+
+<div class="card-columns">
+
+    <div class="card" *ngFor="let futbolista of futbolistas let i= index">
+        <!-- entre corchetes el source indica que esa acción la va a controlar ANGULAR -->
+        <img class="card-img-top" [src]="futbolista.img" [alt]="futbolista.Nombre">
+        <div class="card-body">
+            <h5 class="card-title">{{futbolista.Nombre}}</h5>
+            <p class="card-text">{{futbolista.Bio}}</p>
+            <p class="card-text"><small class="text-muted">{{futbolista.Debut}}</small></p>
+            <button (click)="verJugador(futbolista.Id-1)" type="button" class="btn btn-outline-primary btn-block">
+              Ver más...
+            </button>
+            <!-- <a [routerLink]="['/heroe', 'i']" class="btn btn-outline-primary btn-block ">Ver mas (router link NO BOTON)</a> -->
+        </div>
+    </div>
+
+
+</div>"
